@@ -1,1 +1,11 @@
-/* No CSS */
+@media screen and (max-width: 992px) {
+  .header .navbar-menu {
+    display: none !important;
+  }
+  .header .navbar-options__menu {
+    display: inline-block;
+  }
+  .header-arrows {
+    display: none;
+  }
+}

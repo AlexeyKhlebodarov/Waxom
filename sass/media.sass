@@ -1,1 +1,14 @@
 @import "mixins.sass"
+
+//HEADER>>>
+
+.header
+    @include laptop
+        .navbar
+            &-menu
+                display: none!important
+            &-options
+                &__menu
+                    display: inline-block
+        &-arrows
+            display: none

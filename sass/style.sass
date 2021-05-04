@@ -1,10 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap')
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap')
 @import "mixins.sass"
 
+$lightbrown: #c7b299
+$brown: #998675
+$darkbrown: #362f2d
+
 body
-    font-family: 'Raleway', sans-serif
+    font-family: 'Montserrat', sans-serif
     font-size: 16px
     color: #8c8c8c
+
+h1,h2,h3
+    font-family: 'Raleway', sans-serif
+
+p
+    line-height: 24px
 
 img
     max-width: 100%
@@ -13,6 +24,93 @@ img
     object-position: center
 
 .container
-    max-width: 1210px
-    margin: 0 auto
-    padding: 0 15px
+    max-width: 1180px
+
+.header
+    height: 100%
+    background: url("../images/intro.jpg") center / cover fixed no-repeat
+    color: #fff
+    position: relative
+    .navbar
+        padding-top: 40px
+        &-logo
+
+        &-menu
+            &__link
+                font-family: 'Montserrat', sans-serif
+                font-size: 14px
+        &-options
+            &__menu
+                height: 20px
+                width: 22px
+                position: relative
+                display: none
+                cursor: pointer
+                span, &::before, &::after
+                    content: ""
+                    display: block
+                    height: 2px
+                    width: 100%
+                    position: absolute
+                    left: 0
+                    background-color: #fff
+                span
+                    top: 50%
+                    transform: translateY(-50%)
+                &::before
+                    top: 0
+                &::after
+                    bottom: 0
+            &__cart
+            &__search
+
+    &-content
+        text-align: center
+        margin-top: 230px
+        h2
+            font-size: calc(16px + 10 * (100vw/1180))
+        h1
+            font-size: calc(24px + 14 * (100vw/1180))
+            font-weight: 800
+        p
+            font-weight: 300
+            margin: 15px 0 42px 0
+        button
+            padding: 16px 36px
+            background-color: $brown
+            border-radius: 3px 3px 0 0
+            font-family: 'Raleway', sans-serif
+            font-size: 14px
+            font-weight: 700
+            position: relative
+            &::after
+                content: ''
+                display: block
+                width: 100%
+                height: 3px
+                border-radius: 0 0 3px 3px
+                background-color: #736357
+                position: absolute
+                bottom: -3px
+                left: 0
+    &-arrows
+        &__left, &__right
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+        &__left
+            left: 8vw
+        &__right
+            right: 8vw
+    &-dots
+        position: absolute
+        bottom: 40px
+        left: 50%
+        transform: translateX(-50%)
+        &__item
+            width: 11px
+            height: 11px
+            background-color: rgba(255, 255, 255, 0.5)
+            display: inline-block
+            border-radius: 50%
+            margin: 0 5px

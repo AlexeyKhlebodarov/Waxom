@@ -1,8 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap");
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   color: #8c8c8c;
+}
+
+h1, h2, h3 {
+  font-family: 'Raleway', sans-serif;
+}
+
+p {
+  line-height: 24px;
 }
 
 img {
@@ -15,7 +24,126 @@ img {
 }
 
 .container {
-  max-width: 1210px;
-  margin: 0 auto;
-  padding: 0 15px;
+  max-width: 1180px;
+}
+
+.header {
+  height: 100%;
+  background: url("../images/intro.jpg") center/cover fixed no-repeat;
+  color: #fff;
+  position: relative;
+}
+
+.header .navbar {
+  padding-top: 40px;
+}
+
+.header .navbar-menu__link {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+.header .navbar-options__menu {
+  height: 20px;
+  width: 22px;
+  position: relative;
+  display: none;
+  cursor: pointer;
+}
+
+.header .navbar-options__menu span, .header .navbar-options__menu::before, .header .navbar-options__menu::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: #fff;
+}
+
+.header .navbar-options__menu span {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.header .navbar-options__menu::before {
+  top: 0;
+}
+
+.header .navbar-options__menu::after {
+  bottom: 0;
+}
+
+.header-content {
+  text-align: center;
+  margin-top: 230px;
+}
+
+.header-content h2 {
+  font-size: calc(16px + 10 * (100vw/1180));
+}
+
+.header-content h1 {
+  font-size: calc(24px + 14 * (100vw/1180));
+  font-weight: 800;
+}
+
+.header-content p {
+  font-weight: 300;
+  margin: 15px 0 42px 0;
+}
+
+.header-content button {
+  padding: 16px 36px;
+  background-color: #998675;
+  border-radius: 3px 3px 0 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+}
+
+.header-content button::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 0 0 3px 3px;
+  background-color: #736357;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+}
+
+.header-arrows__left, .header-arrows__right {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.header-arrows__left {
+  left: 8vw;
+}
+
+.header-arrows__right {
+  right: 8vw;
+}
+
+.header-dots {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.header-dots__item {
+  width: 11px;
+  height: 11px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: inline-block;
+  border-radius: 50%;
+  margin: 0 5px;
 }
