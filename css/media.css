@@ -1,3 +1,9 @@
+@media screen and (max-width: 576px) {
+  .intro {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .header .navbar-menu {
     display: none !important;
@@ -7,5 +13,32 @@
   }
   .header-arrows {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-pictures img {
+    position: relative;
+    margin: 0 auto 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-pictures img:first-child {
+    left: 0;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .purchase {
+    text-align: center;
+  }
+  .purchase .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }

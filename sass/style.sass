@@ -23,8 +23,40 @@ img
     object-fit: cover
     object-position: center
 
+button
+    background-color: $brown
+    color: #fff
+    border-radius: 3px 3px 0 0
+    font-family: 'Raleway', sans-serif
+    font-size: 14px
+    font-weight: 700
+    position: relative
+    &::after
+        content: ''
+        display: block
+        width: 100%
+        height: 3px
+        border-radius: 0 0 3px 3px
+        background-color: #736357
+        position: absolute
+        bottom: -3px
+        left: 0
+
+.intro
+    text-align: center
+    width: 65%
+    margin: 0 auto
+    h2
+        font-size: 30px
+        font-weight: 600
+        color: #555
+    p
+        margin: 22px 0 32px 0
+
 .container
-    max-width: 1180px
+    max-width: 1250px
+
+//HEADER>>>
 
 .header
     height: 100%
@@ -66,7 +98,8 @@ img
 
     &-content
         text-align: center
-        margin-top: 230px
+        position: relative
+        margin-top: calc(150px + 50 * (100vw/1180))
         h2
             font-size: calc(16px + 10 * (100vw/1180))
         h1
@@ -77,22 +110,6 @@ img
             margin: 15px 0 42px 0
         button
             padding: 16px 36px
-            background-color: $brown
-            border-radius: 3px 3px 0 0
-            font-family: 'Raleway', sans-serif
-            font-size: 14px
-            font-weight: 700
-            position: relative
-            &::after
-                content: ''
-                display: block
-                width: 100%
-                height: 3px
-                border-radius: 0 0 3px 3px
-                background-color: #736357
-                position: absolute
-                bottom: -3px
-                left: 0
     &-arrows
         &__left, &__right
             position: absolute
@@ -114,3 +131,82 @@ img
             display: inline-block
             border-radius: 50%
             margin: 0 5px
+
+//SERVICE>>>
+
+.service
+    padding: 80px 0 110px
+    &-item
+        position: relative
+        &:hover
+            h3
+                color: $lightbrown
+            &::after
+                background-color: $lightbrown
+        &::after
+            content: ''
+            display: block
+            width: 70px
+            height: 3px
+            background-color: rgba(153, 134, 117, 0.3)
+            position: absolute
+            bottom: -24px
+            left: 50%
+            transform: translate(-50%)
+        &__icon
+            height: 50px
+            display: flex
+            justify-content: center
+            align-items: flex-end
+        h3
+            font-size: 22px
+            font-weight: 600
+            color: #555
+            margin: 25px 0 12px 0
+        p
+            font-size: 14px
+
+//PORTFOLIO>>>
+
+.portfolio
+    background-color: #fbfaf8
+    padding-top: 80px
+    &-pictures
+        position: relative
+        min-height: 505px
+        max-height: 100%
+        img
+            position: absolute
+            bottom: 0
+            z-index: 0
+            @include tablets
+                position: relative
+                margin: 0 auto 20px
+            &:first-child
+                left: 50%
+                transform: translateX(-50%)
+                z-index: 1
+                @include tablets
+                    left: 0
+                    transform: translateX(0)
+            &:nth-child(2)
+                left: 0
+            &:last-child
+                right: 0
+
+//PURCHASE>>>
+
+.purchase
+    background: linear-gradient(to right, #211b19 0%, #3a2921 50%, #4e3427 100%)
+    padding: 50px 0 36px 0
+    .container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        h2
+            color: #fff
+            font-size: 26px
+            span
+                color: $lightbrown
+        button
+            padding: 16px 36px

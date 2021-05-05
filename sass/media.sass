@@ -1,5 +1,9 @@
 @import "mixins.sass"
 
+.intro
+    @include phones
+        width: 100%
+
 //HEADER>>>
 
 .header
@@ -12,3 +16,23 @@
                     display: inline-block
         &-arrows
             display: none
+
+//PORTFOLIO>>>
+
+.portfolio-pictures
+    img
+        @include tablets
+            position: relative
+            margin: 0 auto 20px
+        &:first-child
+            @include tablets
+                left: 0
+                transform: translateX(0)
+
+//PURCHASE>>>
+
+.purchase
+    @include tablets
+        text-align: center
+        .container
+            flex-direction: column
