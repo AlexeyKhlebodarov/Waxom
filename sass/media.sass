@@ -1,7 +1,7 @@
 @import "mixins.sass"
 
 .intro
-    @include phones
+    @include tablets
         width: 100%
 
 //HEADER>>>
@@ -36,3 +36,27 @@
         text-align: center
         .container
             flex-direction: column
+
+//PROJECT>>>
+
+//VIDEO>>>
+
+.video
+    @include laptop
+        &-text
+            h2,p
+                display: none
+            img
+                margin-bottom: 0
+                width: 12.5vw
+
+//STAT>>>
+
+.stat-main__item
+    @include tablets
+        flex: 0 0 33%
+        margin: 20px 0
+    @include phones
+        flex: 0 0 40%
+    @include xsphones
+        flex: 0 0 90%

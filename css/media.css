@@ -1,4 +1,4 @@
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   .intro {
     width: 100%;
   }
@@ -40,5 +40,40 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .video-text h2, .video-text p {
+    display: none;
+  }
+  .video-text img {
+    margin-bottom: 0;
+    width: 12.5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .stat-main__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33%;
+            flex: 0 0 33%;
+    margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .stat-main__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .stat-main__item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 90%;
+            flex: 0 0 90%;
   }
 }
