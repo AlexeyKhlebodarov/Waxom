@@ -50,6 +50,17 @@ button::after {
   left: 0;
 }
 
+button:hover {
+  background-color: #362f2d;
+  color: #c7b299;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+button:hover::after {
+  display: none;
+}
+
 .intro {
   text-align: center;
   max-width: 65%;
@@ -81,6 +92,10 @@ button::after {
 .header .navbar-menu__link {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
+}
+
+.header .navbar-menu__link:hover {
+  color: #c7b299;
 }
 
 .header .navbar-options__menu {
@@ -115,6 +130,10 @@ button::after {
   bottom: 0;
 }
 
+.header .navbar-options__cart, .header .navbar-options__search {
+  cursor: pointer;
+}
+
 .header-content {
   margin-top: calc(10% + 7.5vw);
   text-align: center;
@@ -138,6 +157,10 @@ button::after {
 
 .header-content button {
   padding: 16px 36px;
+}
+
+.header-arrows {
+  cursor: pointer;
 }
 
 .header-arrows__left, .header-arrows__right {
@@ -170,6 +193,14 @@ button::after {
   display: inline-block;
   border-radius: 50%;
   margin: 0 5px;
+  cursor: pointer;
+}
+
+.header-dots__item:hover {
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  border: 2px solid #c7b299;
 }
 
 .service {
@@ -184,13 +215,29 @@ button::after {
   color: #c7b299;
 }
 
-.service-item:hover::after {
+.service-item:hover::before {
   background-color: #c7b299;
+  width: 70px;
 }
 
 .service-item:hover img {
   -webkit-filter: invert(0.5) sepia(1) hue-rotate(-15deg);
           filter: invert(0.5) sepia(1) hue-rotate(-15deg);
+}
+
+.service-item::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 3px;
+  background-color: rgba(153, 134, 117, 0.3);
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
 }
 
 .service-item::after {
@@ -224,10 +271,14 @@ button::after {
   font-weight: 600;
   color: #555;
   margin: 25px 0 12px 0;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 .service-item p {
   font-size: 14px;
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
 }
 
 .portfolio {
@@ -343,6 +394,7 @@ button::after {
 .project-filter__item:hover {
   background-color: #998675;
   color: #fff;
+  border: none;
 }
 
 .project-content__item {
@@ -545,6 +597,11 @@ button::after {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 20%;
           flex: 0 0 20%;
+}
+
+.stat-main__item img:hover {
+  -webkit-filter: none;
+          filter: none;
 }
 
 .stat-main__item h1 {

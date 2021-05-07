@@ -45,6 +45,12 @@ button
         position: absolute
         bottom: -3px
         left: 0
+    &:hover
+        background-color: $darkbrown
+        color: $lightbrown
+        transition: 0.3s ease-out
+        &::after
+            display: none
 
 .intro
     text-align: center
@@ -67,12 +73,12 @@ button
     position: relative
     .navbar
         padding-top: 40px
-        &-logo
-
         &-menu
             &__link
                 font-family: 'Montserrat', sans-serif
                 font-size: 14px
+                &:hover
+                    color: $lightbrown
         &-options
             &__menu
                 height: 20px
@@ -95,9 +101,8 @@ button
                     top: 0
                 &::after
                     bottom: 0
-            &__cart
-            &__search
-
+            &__cart, &__search
+                cursor: pointer
     &-content
         margin-top: calc(10% + 7.5vw)
         text-align: center
@@ -114,6 +119,7 @@ button
         button
             padding: 16px 36px
     &-arrows
+        cursor: pointer
         &__left, &__right
             position: absolute
             top: 50%
@@ -134,6 +140,12 @@ button
             display: inline-block
             border-radius: 50%
             margin: 0 5px
+            cursor: pointer
+            &:hover
+                width: 15px
+                height: 15px
+                background-color: transparent
+                border: 2px solid $lightbrown
 
 //SERVICE>>>
 
@@ -144,10 +156,22 @@ button
         &:hover
             h3
                 color: $lightbrown
-            &::after
+            &::before
                 background-color: $lightbrown
+                width: 70px
             img
                 filter: invert(.5) sepia(1) hue-rotate(-15deg)
+        &::before
+            content: ''
+            display: block
+            width: 0px
+            height: 3px
+            background-color: rgba(153, 134, 117, 0.3)
+            position: absolute
+            bottom: -24px
+            left: 50%
+            transform: translate(-50%)
+            transition: 0.5s ease-out
         &::after
             content: ''
             display: block
@@ -168,8 +192,10 @@ button
             font-weight: 600
             color: #555
             margin: 25px 0 12px 0
+            transition: 0.3s ease-out
         p
             font-size: 14px
+            transition: 0.3s ease-out
 
 //PORTFOLIO>>>
 
@@ -240,6 +266,7 @@ button
             &:hover
                 background-color: $brown
                 color: #fff
+                border: none
     &-content
         &__item
             display: flex
@@ -368,6 +395,8 @@ button
         margin: 0 auto
         &__item
             flex: 0 0 20%
+            img:hover
+                filter: none
             h1
                 font-size: 48px
                 color: #fff
