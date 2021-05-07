@@ -60,3 +60,14 @@
         flex: 0 0 40%
     @include xsphones
         flex: 0 0 90%
+
+//FOOTER>>>
+.footer
+    @include phones
+        &-main__item-pics
+            img
+                padding: 0 5px 5px 0
+                max-width: 125px
+    @include laptop
+        .row
+            justify-content: center

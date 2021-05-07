@@ -48,19 +48,20 @@ button
 
 .intro
     text-align: center
-    width: 65%
+    max-width: 65%
     margin: 0 auto
     h2
         font-size: 30px
         font-weight: 600
         color: #555
     p
-        margin: 22px 0 32px 0
+        margin: 20px 0 35px 0
 
 //HEADER>>>
 
 .header
-    padding-bottom: 18vw
+    max-height: 100%
+    padding-bottom: 30%
     background: url("../images/intro.jpg") center / cover fixed no-repeat
     color: #fff
     position: relative
@@ -108,7 +109,8 @@ button
             font-weight: 800
         p
             font-weight: 300
-            margin: 15px 0 2vw 0
+            margin: 15px 0 35px 0
+            font-size: calc(12px + 2 * (100vw/1180))
         button
             padding: 16px 36px
     &-arrows
@@ -245,6 +247,7 @@ button
             align-items: center
             margin-bottom: 25px
             position: relative
+            max-width: 370px
             &::before, &::after
                 display: none
             &:hover
@@ -272,7 +275,6 @@ button
         &__theme
             background-color: #fbfaf8
             width: 100%
-            max-width: 370px
             padding: 10px
             padding: 8% 0 4% 8%
             position: relative
@@ -286,7 +288,6 @@ button
                 content: ''
                 height: 10px
                 width: 30px
-                border-top: 0px solid transparent
                 border-bottom: 10px solid #fbfaf8
                 border-left: 15px solid transparent
                 border-right: 15px solid transparent
@@ -387,3 +388,146 @@ button
                     bottom: -30px
                     left: 50%
                     transform: translateX(-50%)
+
+//POST>>>
+
+.post
+    padding: 80px 0
+    &-content
+        width: 100%
+        margin: 0
+        &__date
+            position: absolute
+            top: 20px
+            left: 35px
+            width: 50px
+            height: 60px
+            background: linear-gradient(to bottom, #363636 0%, #363636 58%, #000 58%, #000 100%)
+            color: #fff
+            border-radius: 5px
+            font-size: 12px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: center
+            padding: 7px 0
+            span
+                font-size: 22px
+        &__item
+            display: flex
+            flex-direction: column
+            align-items: center
+            margin-bottom: 25px
+            position: relative
+            max-width: 370px
+            &:hover
+                img
+                    filter: brightness(50%)
+                .post-content__text
+                    background-color: $darkbrown
+                    color: $lightbrown
+                    border: 1px solid $darkbrown
+                p
+                    color: #fff
+                h4
+                    color: $lightbrown
+            img
+                width: 100%
+        &__text
+            border: 1px solid #f8f8f8
+            padding: 25px
+            h4
+                font-size: 18px
+                color: #555
+                font-weight: 500
+            p
+                margin: 12px 0 18px 0
+                font-size: 13px
+            a
+                font-size: 15px
+                position: relative
+                color: $lightbrown
+                &::after
+                    content: ''
+                    display: block
+                    height: 8px
+                    width: 5px
+                    position: absolute
+                    top: 5px
+                    right: -15px
+                    border-top: 5px solid transparent
+                    border-left: 8px solid $lightbrown
+                    border-bottom: 5px solid transparent
+
+    &-arrows
+        width: 50px
+        margin: 10px auto 0
+
+//PARTNER>>>
+
+.partner
+    background: url("../images/partner.jpg") center / cover no-repeat
+    padding: 5vw 0
+    &__img
+        padding: 25px
+
+//FOOTER>>>
+
+.footer
+    background-color: #101010
+    color: #444
+    font-weight: 600
+    font-size: 14px
+    .container
+        max-width: 1250px
+    &-main
+        padding: 80px 0
+        &__item
+            a
+                color: #fff
+                position: relative
+                &::after
+                    content: ''
+                    display: block
+                    height: 5px
+                    width: 5px
+                    position: absolute
+                    top: 5px
+                    right: -15px
+                    border-top: 5px solid transparent
+                    border-left: 5px solid white
+                    border-bottom: 5px solid transparent
+            p
+                padding-bottom: 17px
+                line-height: 20px
+                span
+                    font-size: 12px
+                    color: #2a2a2a
+            h3
+                color: #fff
+                font-size: 24px
+                margin: 18px 0
+            &-pics
+                display: flex
+                flex-direction: row
+                align-items: center
+                flex-wrap: wrap
+                img
+                    padding: 0 10px 10px 0
+                    max-width: 130px
+            &:nth-child(2), &:nth-child(3)
+                p:nth-of-type(1), p:nth-of-type(2)
+                    border-bottom: 1px solid #2a2a2a
+            &:first-child
+                img
+                    margin-bottom: 25px
+    &-bottom
+        background-color: #000
+        padding: 40px 0
+        p
+            margin-bottom: 0px
+            padding: 0 15px
+        .row
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap

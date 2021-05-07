@@ -77,3 +77,18 @@
             flex: 0 0 90%;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .footer-main__item-pics img {
+    padding: 0 5px 5px 0;
+    max-width: 125px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer .row {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
