@@ -66,11 +66,13 @@ button
 //HEADER>>>
 
 .header
+    min-height: 600px
     max-height: 100%
     padding-bottom: 30%
-    background: url("../images/intro.jpg") center / cover fixed no-repeat
+    background: url("../images/intro0.jpg") center / cover fixed no-repeat
     color: #fff
     position: relative
+    transition: 1s ease-out
     .navbar
         padding-top: 40px
         &-menu
@@ -80,31 +82,72 @@ button
                 &:hover
                     color: $lightbrown
         &-options
-            &__menu
-                height: 20px
-                width: 22px
-                position: relative
+            .burger-menu
                 display: none
-                cursor: pointer
-                span, &::before, &::after
-                    content: ""
+                @include laptop
                     display: block
-                    height: 2px
-                    width: 100%
+                &__button
+                    position: relative
+                    width: 30px
+                    height: 30px
+                    border-radius: 5px
+                    background-color: rgba(0, 0, 0, 0.3)
+                    z-index: 10
+                    cursor: pointer
+                span, span::before, span::after
                     position: absolute
-                    left: 0
+                    height: 2px
+                    width: 20px
                     background-color: #fff
+                    left: 0
                 span
                     top: 50%
-                    transform: translateY(-50%)
-                &::before
+                    left: 50%
+                    transform: translate(-50%, -50%)
+                    &::before
+                        content: ""
+                        top: -8px
+                        border-radius: 5px 5px 0 0
+                    &::after
+                        content: ""
+                        top: 8px
+                        border-radius: 0 0 5px 5px
+                &__nav
+                    text-align: center
+                    position: fixed
+                    display: flex
+                    flex-direction: column
+                    justify-content: space-evenly
+                    height: 100%
+                    width: 100%
+                    background: rgba(0, 0, 0, 0.75)
+                    backdrop-filter: blur(5px)
                     top: 0
-                &::after
-                    bottom: 0
-            &__cart, &__search
-                cursor: pointer
+                    right: -100%
+                    transition: 0.5s ease-out
+                    color: #fff
+                    z-index: 5
+                &__link
+                    font-size: 18px
+                    text-transform: uppercase
+                    letter-spacing: 5px
+                    font-weight: 700
+                &_active .burger-menu
+                    &__nav
+                        right: 0
+                    &__button
+                        span
+                            background-color: transparent
+                            &::before
+                                top: 0
+                                transform: rotate(45deg)
+                                transition: 0.3s ease-out
+                            &::after
+                                top: 0
+                                transform: rotate(-45deg)
+                                transition: 0.3s ease-out
     &-content
-        margin-top: calc(10% + 7.5vw)
+        margin-top: calc(8% + 8vw)
         text-align: center
         position: relative
         h2
@@ -141,7 +184,8 @@ button
             border-radius: 50%
             margin: 0 5px
             cursor: pointer
-            &:hover
+            border: none
+            &_active
                 width: 15px
                 height: 15px
                 background-color: transparent
@@ -263,8 +307,8 @@ button
             margin: 0 5px 8px
             &::after
                 display: none
-            &:hover
-                background-color: $brown
+            &_active
+                background-color: $lightbrown
                 color: #fff
                 border: none
     &-content
@@ -336,6 +380,8 @@ button
         position: relative
         video
             padding: 0
+            height: 100%
+            max-height: 700px
     &-text
         position: absolute
         top: 50%
@@ -422,9 +468,17 @@ button
 
 .post
     padding: 80px 0
-    &-content
-        width: 100%
-        margin: 0
+    &-slider
+        max-width: 1090px
+        overflow: hidden
+        margin: 0 auto
+        &__inner
+            display: flex
+            position: relative
+            left: 0
+            top: 0
+            transition: all ease 1s
+            flex-wrap: nowrap
         &__date
             position: absolute
             top: 20px
@@ -443,16 +497,16 @@ button
             span
                 font-size: 22px
         &__item
+            align-content: center
             display: flex
             flex-direction: column
             align-items: center
-            margin-bottom: 25px
             position: relative
             max-width: 370px
             &:hover
                 img
                     filter: brightness(50%)
-                .post-content__text
+                .post-slider__text
                     background-color: $darkbrown
                     color: $lightbrown
                     border: 1px solid $darkbrown
@@ -460,8 +514,8 @@ button
                     color: #fff
                 h4
                     color: $lightbrown
-            img
-                width: 100%
+            @include tablets
+                margin: 0 auto
         &__text
             border: 1px solid #f8f8f8
             padding: 25px
@@ -490,7 +544,7 @@ button
 
     &-arrows
         width: 50px
-        margin: 10px auto 0
+        margin: 35px auto 0
 
 //PARTNER>>>
 
